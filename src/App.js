@@ -7,10 +7,7 @@ import { FetchMealByFirstLetter, SearchMealByName } from './services/mealtServic
 
 function App() {
 
-	const [searchValue, setSearchValue] = useState("");
 	const [meals, setMeals] = useState([]);
-
-
 
 	useEffect(() => {
 		async function fetchMeals() {
@@ -26,7 +23,6 @@ function App() {
 	}, []);
 
 	const handleSearchChange = async (value) => {
-		setSearchValue(value);
 
 		try {
 			const data = await SearchMealByName(value);
